@@ -3,17 +3,19 @@ image:
 
 tasks:
   - name: go-dependencies
-    init: go get -v -t -d ./...
+    init: |
+      echo "👋 go dependencies"
+      go get -v -t -d ./...
   - name: tools
     init: | 
-      npm install
+      echo "👋 installing wasmer"
       curl https://get.wasmer.io -sSfL | sh
       source /home/gitpod/.wasmer/wasmer.sh
-      
+  
 ports:
   - port: 8080
     visibility: public
-    
+
 vscode:
   extensions:
     - golang.go
