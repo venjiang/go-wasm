@@ -6,6 +6,10 @@ tasks:
     init: |
       gvm use go1.13
       #go get -v -t -d ./...
+      go version
+      tinygo version
+      curl https://get.wasmer.io -sSfL | sh
+      source /home/gitpod/.wasmer/wasmer.sh    
     
 ports:
   - port: 8080

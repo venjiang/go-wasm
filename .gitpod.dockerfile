@@ -11,5 +11,3 @@ RUN wget https://github.com/tinygo-org/tinygo/releases/download/v0.18.0/tinygo_0
     rm tinygo_0.18.0_amd64.deb && \
     export PATH=$PATH:/usr/local/tinygo/bin
 
-RUN curl https://get.wasmer.io -sSfL | sh && \
-    source /home/gitpod/.wasmer/wasmer.sh    
