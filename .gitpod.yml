@@ -1,12 +1,12 @@
-#image:
-#  file: .gitpod.dockerfile
+image:
+  file: .gitpod.dockerfile
 
 tasks:
   - name: go-install
     init: |
       echo "👋 installing go"
-      bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-      source /home/gitpod/.gvm/scripts/gvm
+      #bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+      #source /home/gitpod/.gvm/scripts/gvm
       gvm install go1.13 -B
       gvm use go1.13
       echo "👋 go dependencies"
