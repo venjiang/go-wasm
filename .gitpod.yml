@@ -4,7 +4,7 @@ image:
 tasks:
   - name: go-install
     init: |
-      gvm use go1.13
+      gvm use go1.16
       go version
       tinygo version
       curl https://get.wasmer.io -sSfL | sh
