@@ -2,13 +2,10 @@ image:
   file: .gitpod.dockerfile
 
 tasks:
-  - name: go-install
+  - name: select-go-116
     init: |
       gvm use go1.16
-      go version
-      tinygo version
-      curl https://get.wasmer.io -sSfL | sh
-      source /home/gitpod/.wasmer/wasmer.sh    
+      clear
     
 ports:
   - port: 8080
