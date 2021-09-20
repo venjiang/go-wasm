@@ -5,6 +5,7 @@ tasks:
   - name: select-go-116
     init: |
       gvm use go1.16
+      npm install
       clear
     
 ports:
