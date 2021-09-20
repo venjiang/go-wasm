@@ -36,10 +36,9 @@
 
 
 			loadWasm("main.wasm").then(wasm => {
-        console.log("main.wasm is loaded 👋")
-
-				console.log(Hello("Bob Morane"))
-        document.querySelector("h1").innerHTML = Hello("Bob Morane")
+        let jsonData = Hello("Bob", "Morane")
+        console.log(jsonData)
+        document.querySelector("h1").innerHTML = JSON.stringify(jsonData)
 
 			}).catch(error => {
         console.log("ouch", error)
