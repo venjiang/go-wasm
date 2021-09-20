@@ -7,14 +7,15 @@
 	<body>
 		<h1>WASM Experiments</h1>
 		<script>
-
-			if (!WebAssembly.instantiateStreaming) { // polyfill
+			// This is a polyfill for FireFox and Safari
+			if (!WebAssembly.instantiateStreaming) { 
 				WebAssembly.instantiateStreaming = async (resp, importObject) => {
 					const source = await (await resp).arrayBuffer()
 					return await WebAssembly.instantiate(source, importObject)
 				}
 			}
 
+			// Promise to load the wasm file
       function loadWasm(path) {
         const go = new Go()
 
@@ -30,7 +31,7 @@
         })
       }
 
-
+			// Load the wasm file
 			loadWasm("main.wasm").then(wasm => {
         console.log("main.wasm is loaded 👋")
 			}).catch(error => {
