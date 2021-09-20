@@ -1,8 +1,8 @@
 
-
 ```bash
-go mod init gitlab.com/k33g_org/suborbital-demo/01-hello-world
+go mod init hello-world
 ```
+
 
 ```golang
 package main
@@ -12,8 +12,6 @@ import (
 )
 
 func main() {
-
-	fmt.Println("Hello From GoLang 😃")
   fmt.Println("👋 Hello World 🌍")
 	// Prevent the function from returning, which is required in a wasm module
 	<-make(chan bool)
@@ -26,18 +24,20 @@ func main() {
 	<head>
 		<meta charset="utf-8"/>
 		<script src="wasm_exec.js"></script>
+
 	</head>
 	<body>
 		<h1>WASM Experiments</h1>
 		<script>
-
-			if (!WebAssembly.instantiateStreaming) { // polyfill
+			// This is a polyfill for FireFox and Safari
+			if (!WebAssembly.instantiateStreaming) { 
 				WebAssembly.instantiateStreaming = async (resp, importObject) => {
 					const source = await (await resp).arrayBuffer()
 					return await WebAssembly.instantiate(source, importObject)
 				}
 			}
 
+			// Promise to load the wasm file
       function loadWasm(path) {
         const go = new Go()
 
@@ -53,7 +53,7 @@ func main() {
         })
       }
 
-
+			// Load the wasm file
 			loadWasm("main.wasm").then(wasm => {
         console.log("main.wasm is loaded 👋")
 			}).catch(error => {
