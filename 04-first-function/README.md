@@ -9,7 +9,7 @@ ls -lh *.wasm
 ## Serve index.html
 
 ```bash
-python3 -m http.server
+node index.js
 ```
 
 
