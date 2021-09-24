@@ -17,3 +17,5 @@ vscode:
     - golang.go
     - wayou.vscode-todo-highlight
     - coenraads.bracket-pair-colorizer-2
+    - pkief.material-icon-theme
+
